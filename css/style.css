@@ -1,0 +1,39 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, .calculator {
+    margin-top: 3rem;
+    margin-left: 3rem;
+}
+
+.calculator {
+    width: 200px;
+}
+
+.calculator__display input{
+    width: 100%;
+    text-align: end;
+}
+
+.calculator__buttons {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.calculator__arithmetic__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.calculator__buttons input, .calculator__arithmetic__buttons input {
+    padding: 15px;
+}
