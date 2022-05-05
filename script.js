@@ -23,7 +23,10 @@ class Calculadora {
   deletar() {}
 
   acrescentarNum(number) {
-    this.currentOperation = number;
+    //check se tem um ponto ja no display, antes de adicionar novamente
+    if (number === "." && this.currentOperation.includes(".")) return;
+    this.currentOperation =
+      this.currentOperation.toString() + number.toString();
   }
 
   atualizarDisplay() {
