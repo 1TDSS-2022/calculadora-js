@@ -29,8 +29,15 @@ class Calculadora {
       this.currentOperation.toString() + number.toString();
   }
 
+  escolhaOperacao(operation) {
+    this.operation = operation;
+    this.previousOperation = this.currentOperation;
+    this.currentOperation = "";
+  }
+
   atualizarDisplay() {
     this.currentText.innerText = this.currentOperation;
+    this.previousText.innerText = this.previousOperation;
   }
 }
 
@@ -54,6 +61,13 @@ const calculadora = new Calculadora(previousText, currentText);
 numbersBtn.forEach((button) => {
   button.addEventListener("click", () => {
     calculadora.acrescentarNum(button.innerText);
+    calculadora.atualizarDisplay();
+  });
+});
+
+operationsBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculadora.escolhaOperacao(button.innerText);
     calculadora.atualizarDisplay();
   });
 });
