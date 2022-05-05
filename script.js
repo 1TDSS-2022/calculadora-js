@@ -1,3 +1,13 @@
+// class Calculadora
+
+class Calculadora {
+  // guarda onde irá ficar os dados para realizar a operação
+  constructor(previousText, currentText) {
+    this.previousText = previousText;
+    this.currentText = currentText;
+  }
+}
+
 // para nao misturar classes de css com html, podemos usar outra opção
 // com o data-atributes e selecionar eles como se fosse querySelector
 // document.querySelectorAll('[data-number]') exemplo de como usar o data-atributes
