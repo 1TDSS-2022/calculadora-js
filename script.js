@@ -1,10 +1,33 @@
 // class Calculadora
+// guardar os dados
+// função all clear
+// função delete
+// operações em geral
 
 class Calculadora {
   // guarda onde irá ficar os dados para realizar a operação
   constructor(previousText, currentText) {
     this.previousText = previousText;
     this.currentText = currentText;
+    this.limpar();
+  }
+
+  limpar() {
+    //limpar os dados
+    // resetar o tipo de operação
+    this.currentOperation = "";
+    this.previousOperation = "";
+    this.operations = undefined;
+  }
+
+  deletar() {}
+
+  acrescentarNum(number) {
+    this.currentOperation = number;
+  }
+
+  atualizarDisplay() {
+    this.currentText.innerText = this.currentOperation;
   }
 }
 
@@ -22,3 +45,12 @@ const delBtn = document.querySelector("[data-delete]");
 const allClearBtn = document.querySelector("[data-all-clear]");
 const previousText = document.querySelector("[data-previous]");
 const currentText = document.querySelector("[data-current]");
+
+const calculadora = new Calculadora(previousText, currentText);
+
+numbersBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculadora.acrescentarNum(button.innerText);
+    calculadora.atualizarDisplay();
+  });
+});
