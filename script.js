@@ -66,7 +66,11 @@ class Calculadora {
 
   atualizarDisplay() {
     this.currentText.innerText = this.currentOperation;
-    this.previousText.innerText = this.previousOperation;
+    if (this.operation != null) {
+      this.previousText.innerText = `${this.previousOperation} ${this.operation}`;
+    } else {
+      this.previousText.innerText = "";
+    }
   }
 }
 
