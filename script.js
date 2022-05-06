@@ -21,6 +21,7 @@ class Calculadora {
   }
 
   delete() {
+    //cada vez que clicar apaga o ultimo numero na string
     this.currentOperation = this.currentOperation.toString().slice(0, -1);
   }
 
