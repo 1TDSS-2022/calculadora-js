@@ -30,6 +30,7 @@ class Calculadora {
   }
 
   escolhaOperacao(operation) {
+    if (this.operation === "") return;
     this.operation = operation;
     this.previousOperation = this.currentOperation;
     this.currentOperation = "";
