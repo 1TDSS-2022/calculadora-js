@@ -50,3 +50,72 @@ const elementosClass = document.querySelectorAll(".minha-classe")
 elementosClass[0].style.backgroundColor = "red"
 
 console.log(variavel)
+
+//Criando uma função para dicionar o valor no visor
+function escreverNoVisor(valueButton) {
+   
+    if (document.querySelector("#txtDisplay").value == "0" || document.querySelector("#txtDisplay").value == "") {
+        document.querySelector("#txtDisplay").value = valueButton 
+    } else {
+        document.querySelector("#txtDisplay").value += valueButton
+    }
+}
+
+//Recuperando o o valor do button com querySelector e adicionando ao visor
+document.querySelector("#btn1").addEventListener("click", function() {
+   //escreverNoVisor(document.querySelector("#btn1").value)
+   escreverNoVisor(this.value)
+})
+
+document.querySelector("#btn2").addEventListener("click", function() {
+    escreverNoVisor(this.value)
+})
+ 
+document.querySelector("#btn3").addEventListener("click", function() {
+    escreverNoVisor(this.value)
+})
+
+document.querySelector("#btn4").addEventListener("click", function() {
+    escreverNoVisor(this.value)
+})
+
+document.querySelector("#btnSomar").addEventListener("click", function() {
+    escreverNoVisor(this.value)
+})
+
+document.querySelector("#btnResultado").addEventListener("click", () => {
+    let visor = document.querySelector("#txtDisplay").value
+    let resultado = 0
+    //Split para separar os operadores
+    //Ele divide o valor do visor em um array
+    //Onde cada elemento é um operador
+    //Exemplo: 1 + 2 + 3
+     //Onde 1, 2, 3 são os elementos do array
+     //let operadores = visor.split(/\+|\-|\*|\//)
+     let visorArray = visor.split("+")
+ 
+     //Realizando a leitura de cada elemento do array
+     for (let valor of visorArray) {
+          resultado += parseInt(valor)
+     }
+     document.querySelector("#txtDisplay").value = resultado
+ 
+  })
+
+
+
+
+//Criando uma função normal global
+//O escopo desse método/função é global
+
+// function nomeDaFuncao() {
+//     console.log("Olá mundo 2!")
+// }
+
+// function soma(a, b) {
+//     return (parseInt(a) + parseInt(b))
+// }
+
+// nomeDaFuncao()
+// console.log(soma(1, 2))
+
