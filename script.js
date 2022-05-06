@@ -103,3 +103,8 @@ equalBtn.addEventListener("click", (button) => {
   calculadora.compute();
   calculadora.atualizarDisplay();
 });
+
+allClearBtn.addEventListener("click", (button) => {
+  calculadora.limpar();
+  calculadora.atualizarDisplay();
+});
