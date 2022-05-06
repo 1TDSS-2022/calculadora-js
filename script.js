@@ -20,7 +20,9 @@ class Calculadora {
     this.operations = undefined;
   }
 
-  deletar() {}
+  delete() {
+    this.currentOperation = this.currentOperation.toString().slice(0, -1);
+  }
 
   acrescentarNum(number) {
     //check se tem um ponto ja no display, antes de adicionar novamente
@@ -106,5 +108,10 @@ equalBtn.addEventListener("click", (button) => {
 
 allClearBtn.addEventListener("click", (button) => {
   calculadora.limpar();
+  calculadora.atualizarDisplay();
+});
+
+delBtn.addEventListener("click", (button) => {
+  calculadora.delete();
   calculadora.atualizarDisplay();
 });
