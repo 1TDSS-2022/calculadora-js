@@ -36,6 +36,32 @@ class Calculadora {
     this.currentOperation = "";
   }
 
+  compute() {
+    let computation;
+    const prev = parseFloat(this.previousOperation);
+    const current = parseFloat(this.currentOperation);
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (this.operation) {
+      case "+":
+        computation = prev + current;
+        break;
+      case "-":
+        computation = prev - current;
+        break;
+      case "/":
+        computation = prev / current;
+        break;
+      case "*":
+        computation = prev * current;
+        break;
+      default:
+        return;
+    }
+    this.currentOperation = computation;
+    this.operation = undefined;
+    this.previousOperation = "";
+  }
+
   atualizarDisplay() {
     this.currentText.innerText = this.currentOperation;
     this.previousText.innerText = this.previousOperation;
@@ -71,4 +97,9 @@ operationsBtn.forEach((button) => {
     calculadora.escolhaOperacao(button.innerText);
     calculadora.atualizarDisplay();
   });
+});
+
+equalBtn.addEventListener("click", (button) => {
+  calculadora.compute();
+  calculadora.atualizarDisplay();
 });
