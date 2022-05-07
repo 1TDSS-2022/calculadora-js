@@ -24,10 +24,9 @@ botoes.forEach((element) => {
         else if (e.target.value != '.') {
             var numeros = display.value.split(new RegExp('[*+/-]'))
             var ultimoNum = numeros[numeros.length - 1]
-            var ultimoChar = display.value.charAt(display.value.length - 1)
 
             //Se o ultimo caracter for 0 E não tiver nenhum ponto ainda, vai substituir pelo numero digitado, se não ficariam 0s a esquerda
-            if (ultimoChar == '0' && !ultimoNum.includes('.'))
+            if (ultimoNum == '0' && !ultimoNum.includes('.'))
                 display.value = e.target.value
 
             //Se não, só vai concatenar com o restante do numero
