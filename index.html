@@ -1,37 +1,49 @@
 <!DOCTYPE html>
-<html lang=pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CALC-JS</title>
-        <script src="./js/script.js" defer></script>
-    </head>
-    <body>
-        
-        <h1 class="minha-classe">MINHA CALCULADORA EM JAVASCRIPT</h1>
+<html lang="pt-br">
 
-        <div>
-            <p class="minha-classe">Exemplo de Título</p>
-            <form action="index.html">
-                
-                <div class="minha-classe">
-                    <input type="text" id="txtDisplay" value="0" readonly>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALC-JS</title>
+    <script src="./js/script.js" defer></script>
+</head>
 
-                <div>
-                    <input type="button" id="bnt1" value="1">
-                    <input type="button" id="bnt2" value="2">
-                    <input type="button" id="bnt3" value="3">
-                    <input type="button" id="bnt4" value="4">
-                    <input type="button" id="bnt5" value="5">
-                    <input type="button" id="bnt6" value="6">
-                    <input type="button" id="bnt7" value="7">
-                    <input type="button" id="bnt8" value="8">
-                    <input type="button" id="bnt9" value="9">
-                    <input type="button" id="bnt0" value=".">
-                </div>
-            </form>
-        </div>
-    </body>
+<body onload="nomeDaFuncao()">
+
+    <h1 class="minha-classe">MINHA CALCULADORA EM JAVASCRIPT</h1>
+
+    <div>
+        <p class="minha-classe">Exemplo de Título</p>
+        <form action="index.html">
+            <!--
+                    Calculadora em javascript
+                -->
+            <div class="minha-classe">
+                <input type="text" id="txtDisplay" value="0" readonly>
+            </div>
+            <div>
+                <input type="button" id="btn1" value="1">
+                <input type="button" id="btn2" value="2">
+                <input type="button" id="btn3" value="3">
+                <input type="button" id="btn4" value="4">
+                <input type="button" id="btn5" value="5">
+                <input type="button" id="btn6" value="6">
+                <input type="button" id="btn7" value="7">
+                <input type="button" id="btn8" value="8">
+                <input type="button" id="btn9" value="9">
+                <input type="button" id="btn0" value="0">
+                <input type="button" id="btnPonto" value=".">
+            </div>
+
+            <div>
+                <input type="button" id="btnSomar" value="+">
+                <input type="button" id="btnResultado" value="=">
+                <input type="button" id="btnLimpa" value="C">
+            </div>
+        </form>
+    </div>
+
+</body>
+
 </html>
