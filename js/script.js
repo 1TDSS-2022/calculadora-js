@@ -54,3 +54,61 @@ const elementosClass = document.querySelectorAll(".minha-classe")
 //Adicionado estlo ao elmento recperado
 elementosClass[0].style.backgroundColor = "red"
 
+//Criando uma função para adicionar valo no visor
+function escreverNoVisor(valueButton) {
+    
+    if (document.querySelector("#textDisplay").value == "0" || (document.querySelector("#txtDisplay").value ==""{
+        document.querySelector("#texteDisplay").value = valueButton
+    }else{
+        document.querySelector("txtDiplay").value += valueButton
+    }
+}
+
+function addOperador(valueButton){
+    let visor = document.querySelector("txtDisplay").value
+    if( visor != "" && valueButton != visor[visor.length -1]){
+        document.querySelector("#txtDisplay").value += valueButton
+    }
+}
+
+document.querySelector("#btn1").addEventListener("click", function() {
+    escreverNoVisor(this.value)
+})
+
+document.querySelector("#btnResultado").addEventListener("click", () => {
+    let visor = document.querySelector("txtDisplay").value
+    let resultado = 0
+    //Split para separar os operadores
+    // ele divide o valor do visor em um Array
+    //Onde cada elemento é um operador
+    //Exemplo: 1 + 2 + 3
+    //Onde 1, 2, 3 são os elementos do array
+    let visorArray = visor.split("+")
+
+    for (let valor of visorArray){
+        resultado += parseInt(valor)
+    }
+    document.querySelector("#txtDisplay").value = resultado
+
+})
+
+//Recuperando o valor do buttom com querySelector e adicionando ao visor
+document.querySelector("#btn1").addEventListener("click", function(){
+    if (document.querySelector("#textDisplay").value == "0" || (document.querySelector("#txtDisplay").value ==""){
+        document.querySelector("#texteDisplay").value = 1
+    }else{
+        document.querySelector("txtDiplay").value += 1
+    }
+})
+
+//Criando uma função para adicionar o valor do button2
+function nomeDaFuncao(){ //Escopo da funçao/ método globalé 
+    console.log("Olá mundo")
+}
+
+function soma(a, b){
+    return a  + b
+}
+
+nomeDaFuncao()
+console.log(soma(1, 2))
