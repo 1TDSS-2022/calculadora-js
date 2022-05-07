@@ -124,3 +124,5 @@ document.querySelector("#btnSomar").addEventListener("click", function() {
 // nomeDaFuncao()
 // console.log(soma(1, 2))
 
+
+
